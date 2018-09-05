@@ -1,0 +1,127 @@
+# File      : README.org
+# Created   : <2018-09-05 Wed 21:23:57 BST>
+# Modified  : <2018-9-05 Wed 23:01:16 BST> Sharlatan
+# Author    : Sharlatan
+# Synopsis  : <>
+
+#+TITLE: stem
+/[S]ystem [T]olerance [E]mitter [M]achine/
+
+Colecting system level information about hardware and OS
+
+*** Classes
+- hw ::
+  - bios ::
+    - brand: "str"
+    - ver: "str"
+    - revision: "str"
+    - release_date: "str"
+  - blck ::
+    - installed: bool
+    - ls: [ list ]
+      - brand: "str"
+      - pn: "str"
+      - sn: "str"
+      - wwn: "str"
+      - firmware: "str"
+      - capacity_b: int
+      - sector_size_b: int
+      - rotation_rate: int
+      - ata_ver: "str"
+      - sata_ver: "str"
+      - smart: bool
+  - cpu ::
+    - ls: [ list ]
+      - brand: "string"
+      - model_name: "str"
+      - cores: int
+      - vendor_id: "str"
+      - cpu_family: int
+      - stepping: int
+      - microcode: hex
+      - cache_size: 
+        - size: int 
+        - dim: "str"
+      - flags: [ list ]
+      - bugs: [ list ]
+      - bogomips: float
+      - clflush_size: int
+      - cache_alignment: int
+      - pn: "str"
+      - sn: "str"
+  - mb ::
+    - brand: "str"
+    - bus:
+      - internal:
+        - mem: int
+        - pci: int
+        - sata: int
+        - sas: int
+        - ida: int
+        - pcie: int
+        - external:
+      - external:
+        - usb: int
+        - esata: int
+      - pn: "str"
+      - sn: "str"
+  - mem ::
+    - ls: [ list ]
+      - brand: "str"
+      - form_factor: "str"
+      - pn: "str"
+      - sn: "str"
+      - capacity: 
+        - size: int 
+        - dim: "str"
+      - speed: "str"
+      - type: "str"
+  - nic ::
+    - installed: bool
+    - ls: [ list ]
+      - brand: "str"
+      - pci_id: "str"
+      - logical_name: "str"
+      - pn: "str"
+      - sn: "str"
+  - raid ::
+    - installed: bool
+    - ls: [ list ]
+      - brand: "str"
+      - pn: "str"
+      - sn: "str"
+- net ::
+  - ls: [ list ]
+    - interface: "str"
+    - address: "str"
+    - gateway: "str"
+    - netmask: "str"
+    - metric: int
+    - vlan: bool
+    - dhcp: bool
+    - pci_id: "str"
+- os :: 
+  - arch: "str"
+  - family: "str"
+    - distr: "str"
+    - ver: int
+  - mem:
+  - partition:
+    - ls: [ list ]
+  - mount:
+    - ls: [ list ]
+  - hostname: "str"
+  - ssh:
+  - init_type: "str"
+  - bootloader: "str"
+  - uptime: int
+  - virt: bool
+  - usr:
+    - ls: [ list ]
+  - grp:
+    - ls: [ list ]
+
+** Referances
+- Hide World Wide Name
+  https://en.wikipedia.org/wiki/World_Wide_Name
+# End of README.org
